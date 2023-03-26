@@ -1,5 +1,4 @@
 import time
-from matplotlib import pyplot as plt
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver as ChromeDriver
 from selenium.webdriver.chrome.service import Service
@@ -60,55 +59,11 @@ def create_Db():
     return client['End_projet']
 
 
-# mydb = create_Db()
-# myCollection = mydb['data_']
-
 mydb = create_Db()
 myCollection = mydb['data_']
-def intoMontgo():
-    
-    data = scrapping()
-    # print(data)
-
-    #     if d != data[0]:
-    #         myCollection.insert_one(d)
-    myCollection.insert_many(data)
 
 
-def streamlit_part():
-
-    df = pd.DataFrame(list(myCollection.find({}, {'_id': 0})))
-    st.write('My First Streamlit Web App')
-    st.write(df)
-    fig, ax = plt.subplots()
-    vendeur_type = df[['vendeur_type']].value_counts()
-    print(vendeur_type)
-    vendeur_type.plot(kind='pie')
-    # st.bar_chart(chart_data['grp_sanguin'].value_counts())
-
-    # man = chart_data[['grp_sanguin', 'sex']].loc[chart_data['sex'] == 'M']
-    # fig = plt.subplot()
-    # fig1 = pd.crosstab(df['grp_sanguin'], df['sex']).plot.bar()
-    st.pyplot(fig)
-    fig2, ax2 = fig, ax = plt.subplots()
-    # Obtenir l'entrée de l'utilisateur pour le vendeur
-    vendeur_input = st.text_input('Entrez le nom du vendeur :')
-    if vendeur_input != '':
-        # Filtrer le DataFrame en fonction du vendeur
-        df_vendeur = df[df['vendeur'] == vendeur_input]
-
-        # Afficher le DataFrame filtré dans Streamlit
-        st.write(df_vendeur)
-    # Obtenir l'entrée de l'utilisateur pour le type de vendeur
-    vendeur_type_input = st.selectbox(
-        'Sélectionnez le type de vendeur :', ['Pro', 'Particulier'])
-
-    # Filtrer le DataFrame en fonction du type de vendeur
-    df_vendeur_type = df[df['vendeur_type'] == vendeur_type_input]
-
-    # Afficher le DataFrame filtré dans Streamlit
-    st.write(df_vendeur_type)
-
-
-# streamlit_part()
-# print(data[1])
+def intoMontgo(collection, data):
+    collection.drop()
+    # data = scrapping()
+    collection.insert_many(data)
