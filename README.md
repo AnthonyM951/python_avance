@@ -11,7 +11,7 @@ Les bibliothèques Python suivantes : pandas, pymongo, selenium, matplotlib et s
 Clonez ce repository ou téléchargez-le sous forme de fichier zip.
 Ouvrez un terminal et accédez au répertoire contenant les fichiers téléchargés.
 
-# Les dfférents scripts
+# Les différents scripts
 ## script_1_scraping.py
 Ce script utilise la bibliothèque Selenium pour effectuer du web scraping sur le site eBay.fr. Il récupère le nom, le prix, le vendeur et le type de vendeur de chaque produit de la première page de résultats de recherche pour une recherche spécifiée (ici, "peinture"). Les données sont stockées dans une liste de dictionnaires, puis insérées dans une base de données MongoDB.
 
@@ -31,9 +31,9 @@ Cette classe contient des tests unitaires pour la fonction streamlit_part.
 Cette fonction contient des tests unitaires pour la fonction intoMontgo qui insère les données dans la base de données MongoDB.
 
 # Utilisation
-Exécutez le script projet.py pour collecter des données à partir du site eBay.fr et les stocker dans la base de données MongoDB.
-Exécutez le streamlit_project.py pour afficher les données stockées dans le tableau et filtrer les données selon vos besoins.
-(Optionnel) Exécutez les scripts de test (unittest_project.py) pour vous assurer que les fonctions fonctionnent correctement.
+- Exécutez le script projet.py pour collecter des données à partir du site eBay.fr et les stocker dans la base de données MongoDB.
+- Exécutez le streamlit_project.py pour afficher les données stockées dans le tableau et filtrer les données selon vos besoins.
+- (Optionnel) Exécutez les scripts de test (unittest_project.py) pour vous assurer que les fonctions fonctionnent correctement.
 
 # Auteur
 Ce projet a été réalisé par Anthony dans le cadre d'un cours de programmation.
